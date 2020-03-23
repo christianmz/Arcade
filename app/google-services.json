@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "534200538635",
+    "firebase_url": "https://arcade-511d6.firebaseio.com",
+    "project_id": "arcade-511d6",
+    "storage_bucket": "arcade-511d6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:534200538635:android:5d142ac894d17d50b8990e",
+        "android_client_info": {
+          "package_name": "com.meazza.arcade"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "534200538635-eqihbrfeellujt9g4v0e4g20b8lls4js.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiQtt1QI7rUH7bq9l6qLgPpXhkgyC9new"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "534200538635-eqihbrfeellujt9g4v0e4g20b8lls4js.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

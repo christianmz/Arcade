@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Arcade</string>
+    <string name="start">START</string>
+    <string name="zero">0</string>
+    <string name="duck_hunt">Duck Hunt</string>
+    <string name="sixty">60</string>
+    <string name="game_over">Game Over</string>
+    <string name="total_points">Total Points</string>
+    <string name="exit">Exit</string>
+    <string name="ranking">Ranking</string>
+    <string name="login_google">LOG IN WITH GOOGLE</string>
+</resources>
