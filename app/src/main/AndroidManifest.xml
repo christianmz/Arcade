@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.meazza.arcade">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name=".di.App"
         android:allowBackup="true"
@@ -11,16 +13,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".ui.DuckHuntActivity"
+            android:name=".ui.duck_hunt.DuckHuntActivity"
             android:theme="@style/GameTheme">
+        </activity>
+        <activity android:name=".ui.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".MainActivity">
-
         </activity>
     </application>
 

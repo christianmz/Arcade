@@ -8,5 +8,5 @@
     <string name="total_points">Total Points</string>
     <string name="exit">Exit</string>
     <string name="ranking">Ranking</string>
-    <string name="login_google">LOG IN WITH GOOGLE</string>
+    <string name="sign_in_google">SIGN IN WITH GOOGLE</string>
 </resources>

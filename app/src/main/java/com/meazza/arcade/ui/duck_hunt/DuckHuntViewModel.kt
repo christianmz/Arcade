@@ -1,4 +1,4 @@
-package com.meazza.arcade.ui
+package com.meazza.arcade.ui.duck_hunt
 
 import android.widget.ImageView
 import androidx.lifecycle.ViewModel

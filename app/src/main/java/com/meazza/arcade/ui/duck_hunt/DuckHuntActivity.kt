@@ -1,4 +1,4 @@
-package com.meazza.arcade.ui
+package com.meazza.arcade.ui.duck_hunt
 
 import android.graphics.Point
 import android.os.Bundle
@@ -6,7 +6,7 @@ import android.os.CountDownTimer
 import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import com.meazza.arcade.MainActivity
+import com.meazza.arcade.ui.main.MainActivity
 import com.meazza.arcade.R
 import kotlinx.android.synthetic.main.activity_duck_hunt.*
 import org.jetbrains.anko.clearTask
