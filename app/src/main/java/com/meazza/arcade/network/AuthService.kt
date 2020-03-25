@@ -12,6 +12,9 @@ object AuthService {
 
     private val mAuth by lazy { FirebaseAuth.getInstance() }
 
+    val currentUser = mAuth.currentUser
+    val signOut = mAuth.signOut()
+
     fun getGoogleAccount(intent: Intent)
             : Task<GoogleSignInAccount> = GoogleSignIn.getSignedInAccountFromIntent(intent)
 

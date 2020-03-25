@@ -32,4 +32,52 @@
         app:layout_constraintEnd_toEndOf="@+id/iv_logo"
         app:layout_constraintStart_toStartOf="@+id/iv_logo"
         app:layout_constraintTop_toBottomOf="@+id/iv_logo" />
+
+    <Button
+        android:id="@+id/btn_tictactoe"
+        android:layout_width="0dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/tictactoe"
+        android:textColor="#CDD7E2"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/btn_duck_hunt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_logo"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <Button
+        android:id="@+id/btn_duck_hunt"
+        android:layout_width="0dp"
+        android:layout_height="72dp"
+        android:layout_marginBottom="64dp"
+        android:text="@string/duck_hunt"
+        android:textColor="#CDD7E2"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/btn_sign_out"
+        app:layout_constraintEnd_toEndOf="@+id/btn_tictactoe"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/btn_tictactoe"
+        app:layout_constraintTop_toBottomOf="@+id/btn_tictactoe" />
+
+    <Button
+        android:id="@+id/btn_sign_out"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="#188AAF"
+        android:text="@string/sign_out"
+        android:textColor="#CDD7E2"
+        android:textSize="14sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btn_duck_hunt"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/btn_duck_hunt"
+        app:layout_constraintTop_toBottomOf="@+id/btn_duck_hunt" />
 </androidx.constraintlayout.widget.ConstraintLayout>
