@@ -12,6 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ui.tictactoe.MatchActivity"/>
+        <activity android:name=".ui.tictactoe.TicTacToeActivity" />
         <activity
             android:name=".ui.duck_hunt.ranking.RankingActivity"
             android:parentActivityName=".ui.duck_hunt.DuckHuntActivity" />

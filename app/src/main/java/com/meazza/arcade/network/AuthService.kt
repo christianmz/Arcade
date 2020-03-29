@@ -12,7 +12,7 @@ object AuthService {
 
     private val mAuth by lazy { FirebaseAuth.getInstance() }
 
-    val currentUser = mAuth.currentUser
+    val user = mAuth.currentUser
     val signOut = mAuth.signOut()
 
     fun getGoogleAccount(intent: Intent)

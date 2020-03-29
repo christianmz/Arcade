@@ -10,7 +10,7 @@ class App : Application() {
         super.onCreate()
         startKoin {
             androidContext(this@App)
-            modules(listOf(duckHuntModule, mainModule))
+            modules(listOf(mainModule, ticTacToeModule, duckHuntModule))
         }
     }
 }

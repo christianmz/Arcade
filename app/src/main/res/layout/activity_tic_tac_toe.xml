@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".ui.tictactoe.TicTacToeActivity">
+
+    <TextView
+        android:id="@+id/tv_loading"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/loading"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/colorAccent"
+        android:textSize="24sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/pb_loading"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <ProgressBar
+        android:id="@+id/pb_loading"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tv_loading"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/tv_loading"
+        app:layout_constraintTop_toBottomOf="@+id/tv_loading" />
+
+    <ImageView
+        android:id="@+id/iv_tictactoe"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="64dp"
+        android:contentDescription="@string/tictactoe"
+        app:layout_constraintBottom_toTopOf="@+id/btn_play"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:srcCompat="@drawable/ic_tictactoe" />
+
+    <Button
+        android:id="@+id/btn_play"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="64dp"
+        android:backgroundTint="@color/ic_launcher_background"
+        android:text="@string/play"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_ranking_tictactoe"
+        app:layout_constraintEnd_toEndOf="@+id/iv_tictactoe"
+        app:layout_constraintStart_toStartOf="@+id/iv_tictactoe"
+        app:layout_constraintTop_toBottomOf="@+id/iv_tictactoe" />
+
+    <Button
+        android:id="@+id/btn_ranking_tictactoe"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/ic_launcher_background"
+        android:text="@string/ranking"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btn_play"
+        app:layout_constraintStart_toStartOf="@+id/btn_play"
+        app:layout_constraintTop_toBottomOf="@+id/btn_play" />
+</androidx.constraintlayout.widget.ConstraintLayout>

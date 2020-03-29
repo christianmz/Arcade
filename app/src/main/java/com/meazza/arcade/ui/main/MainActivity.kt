@@ -10,6 +10,7 @@ import com.meazza.arcade.R
 import com.meazza.arcade.network.AuthService
 import com.meazza.arcade.network.GoogleClient
 import com.meazza.arcade.ui.duck_hunt.DuckHuntActivity
+import com.meazza.arcade.ui.tictactoe.TicTacToeActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.startActivity
 import org.koin.android.ext.android.inject
@@ -29,8 +30,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        if (AuthService.currentUser != null) {
-            userLogged()
+        if (AuthService.user != null) {
+            changeVisibility(true)
+            btn_sign_out.text = AuthService.user.displayName
         }
 
         tokenID = getString(R.string.default_web_client_id)
@@ -42,11 +44,11 @@ class MainActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
 
         if (requestCode == RC_SIGN_IN) {
-            val task = mainViewModel.getGoogleAccount(data!!)
+            val task = data?.let { mainViewModel.getGoogleAccount(it) }
             try {
-                val account = task.getResult(ApiException::class.java)
+                val account = task?.getResult(ApiException::class.java)
                 mainViewModel.firebaseAuthWithGoogle(account!!)
-                userLogged()
+                changeVisibility(true)
             } catch (e: ApiException) {
                 Log.w("TAG", "Google sign in failed", e)
             }
@@ -59,7 +61,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         btn_tictactoe.setOnClickListener {
-
+            startActivity<TicTacToeActivity>()
         }
 
         btn_duck_hunt.setOnClickListener {
@@ -67,22 +69,15 @@ class MainActivity : AppCompatActivity() {
         }
 
         btn_sign_out.setOnClickListener {
-            signOut()
+            AuthService.signOut
+            changeVisibility(false)
         }
     }
 
-    private fun userLogged() {
-        btn_tictactoe.visibility = View.VISIBLE
-        btn_duck_hunt.visibility = View.VISIBLE
-        btn_sign_out.visibility = View.VISIBLE
-        btn_sign_in.visibility = View.GONE
-    }
-
-    private fun signOut() {
-        AuthService.signOut
-        btn_tictactoe.visibility = View.INVISIBLE
-        btn_duck_hunt.visibility = View.INVISIBLE
-        btn_sign_out.visibility = View.INVISIBLE
-        btn_sign_in.visibility = View.VISIBLE
+    private fun changeVisibility(show: Boolean) {
+        btn_tictactoe.visibility = if (show) View.VISIBLE else View.GONE
+        btn_duck_hunt.visibility = if (show) View.VISIBLE else View.GONE
+        btn_sign_out.visibility = if (show) View.VISIBLE else View.GONE
+        btn_sign_in.visibility = if (show) View.GONE else View.VISIBLE
     }
 }

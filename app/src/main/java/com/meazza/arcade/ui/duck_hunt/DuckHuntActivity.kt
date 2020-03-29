@@ -6,16 +6,12 @@ import android.os.CountDownTimer
 import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
-import com.meazza.arcade.ui.main.MainActivity
 import com.meazza.arcade.R
-import com.meazza.arcade.model.User
+import com.meazza.arcade.model.Score
 import com.meazza.arcade.network.AuthService
 import com.meazza.arcade.ui.duck_hunt.ranking.RankingActivity
+import com.meazza.arcade.ui.main.MainActivity
 import kotlinx.android.synthetic.main.activity_duck_hunt.*
-import org.jetbrains.anko.clearTask
-import org.jetbrains.anko.intentFor
-import org.jetbrains.anko.newTask
 import org.jetbrains.anko.startActivity
 import org.koin.android.ext.android.inject
 
@@ -87,8 +83,8 @@ class DuckHuntActivity : AppCompatActivity() {
 
             override fun onFinish() {
                 gameOver = true
-                val userName = AuthService.currentUser?.displayName!!
-                val user = User(userName, counter)
+                val userName = AuthService.user?.displayName!!
+                val user = Score(userName, counter)
                 duckHuntViewModel.insertRecord(user)
                 showAlert()
             }

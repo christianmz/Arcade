@@ -3,14 +3,14 @@ package com.meazza.arcade.ui.duck_hunt
 import android.widget.ImageView
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.meazza.arcade.model.User
-import com.meazza.arcade.repository.DatabaseRepository
+import com.meazza.arcade.model.Score
+import com.meazza.arcade.repository.DuckHuntRepository
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlin.random.Random
 
 
-class DuckHuntViewModel(private val repository: DatabaseRepository) : ViewModel() {
+class DuckHuntViewModel(private val repository: DuckHuntRepository) : ViewModel() {
 
     fun duckRandomness(
         imageView: ImageView, drawable: Int,
@@ -30,10 +30,10 @@ class DuckHuntViewModel(private val repository: DatabaseRepository) : ViewModel(
         }
     }
 
-    fun insertRecord(user: User) {
+    fun insertRecord(score: Score) {
         viewModelScope.launch {
             try {
-                repository.insertRecord(user)
+                repository.insertScore(score)
             } catch (e: Exception) {
                 e.printStackTrace()
             }
