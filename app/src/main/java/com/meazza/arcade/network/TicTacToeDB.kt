@@ -13,12 +13,14 @@ object TicTacToeDB {
 
     private val userId = AuthService.user?.uid
 
-    private lateinit var query: QuerySnapshot
-    var listener: ListenerRegistration? = null
-
     private const val PLAYERS_REF = "players"
     private const val MATCHES_REF = "matches"
     private const val PLAYER_TWO_ID = "playerTwoId"
+
+    private lateinit var query: QuerySnapshot
+    private lateinit var newMatchId : String
+
+    var listener: ListenerRegistration? = null
 
     suspend fun createPlayer(player: Player) {
         mDatabaseRef.collection(PLAYERS_REF).document(player.id).set(player).await()
@@ -36,7 +38,8 @@ object TicTacToeDB {
 
     suspend fun createMatch(): String {
         val document = mDatabaseRef.collection(MATCHES_REF).add(Match(userId)).await()
-        return document.id
+        newMatchId = document.id
+        return newMatchId
     }
 
     suspend fun searchMatch(): String {
@@ -55,7 +58,7 @@ object TicTacToeDB {
 
         var result = false
 
-        listener = mDatabaseRef.collection(MATCHES_REF).document()
+        listener = mDatabaseRef.collection(MATCHES_REF).document(newMatchId)
             .addSnapshotListener { document, _ ->
                 result = !document?.get(PLAYER_TWO_ID)?.equals("")!!
             }

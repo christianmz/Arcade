@@ -6,6 +6,7 @@ import com.meazza.arcade.network.TicTacToeDB
 import com.meazza.arcade.repository.AuthRepository
 import com.meazza.arcade.repository.DuckHuntRepository
 import com.meazza.arcade.repository.TicTacToeRepository
+import com.meazza.arcade.ui.auth.AuthViewModel
 import com.meazza.arcade.ui.duck_hunt.DuckHuntViewModel
 import com.meazza.arcade.ui.duck_hunt.ranking.RankingViewModel
 import com.meazza.arcade.ui.main.MainViewModel
@@ -14,9 +15,13 @@ import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val mainModule = module {
-    single { AuthService }
     single { AuthRepository(get()) }
     viewModel { MainViewModel(get()) }
+}
+
+val authModule = module {
+    single { AuthService }
+    viewModel { AuthViewModel(get()) }
 }
 
 val ticTacToeModule = module {

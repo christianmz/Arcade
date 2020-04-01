@@ -84,8 +84,8 @@ class DuckHuntActivity : AppCompatActivity() {
             override fun onFinish() {
                 gameOver = true
                 val userName = AuthService.user?.displayName!!
-                val user = Score(userName, counter)
-                duckHuntViewModel.insertRecord(user)
+                val score = Score(userName, counter)
+                duckHuntViewModel.insertRecord(score)
                 showAlert()
             }
         }.start()

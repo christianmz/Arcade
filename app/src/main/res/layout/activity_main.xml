@@ -22,7 +22,7 @@
         app:srcCompat="@drawable/ic_logo" />
 
     <Button
-        android:id="@+id/btn_sign_in"
+        android:id="@+id/btn_google_sign_in"
         android:layout_width="0dp"
         android:layout_height="72dp"
         android:text="@string/sign_in_google"

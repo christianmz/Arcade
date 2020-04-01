@@ -12,7 +12,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.tictactoe.MatchActivity"/>
+        <activity
+            android:name=".ui.auth.SignInActivity"
+            android:parentActivityName=".ui.auth.LoginActivity" />
+        <activity android:name=".ui.auth.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.tictactoe.MatchActivity" />
         <activity android:name=".ui.tictactoe.TicTacToeActivity" />
         <activity
             android:name=".ui.duck_hunt.ranking.RankingActivity"
@@ -21,11 +31,7 @@
             android:name=".ui.duck_hunt.DuckHuntActivity"
             android:theme="@style/GameTheme" />
         <activity android:name=".ui.main.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

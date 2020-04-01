@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun buttonAction() {
-        btn_sign_in.setOnClickListener {
+        btn_google_sign_in.setOnClickListener {
             startActivityForResult(mGoogleSignClient.signInIntent, RC_SIGN_IN)
         }
 
@@ -78,6 +78,6 @@ class MainActivity : AppCompatActivity() {
         btn_tictactoe.visibility = if (show) View.VISIBLE else View.GONE
         btn_duck_hunt.visibility = if (show) View.VISIBLE else View.GONE
         btn_sign_out.visibility = if (show) View.VISIBLE else View.GONE
-        btn_sign_in.visibility = if (show) View.GONE else View.VISIBLE
+        btn_google_sign_in.visibility = if (show) View.GONE else View.VISIBLE
     }
 }
